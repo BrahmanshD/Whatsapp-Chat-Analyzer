@@ -3,7 +3,6 @@ import Preprocessor,helper
 import matplotlib.pyplot as plt
 import seaborn as sns
 import webbrowser
-from bokeh.models.widgets import Div
 
 
 # --------------------------------------------
@@ -12,6 +11,9 @@ from bokeh.models.widgets import Div
 st.title("Whatsapp Chat Analyser")
 st.text("by:")
 st.text("1.Brahmansh Dwivedi  2.Aviral Srivastav  3.Aruneema Joshi")
+st.markdown("""---""")
+st.text('* 24hr chat format is preferred for better outcome')
+st.markdown("""---""")
 st.sidebar.title("Whatsapp Chat Analyzer")
 st.sidebar.text("by:")
 st.sidebar.text("1.Brahmansh Dwivedi")
@@ -136,45 +138,16 @@ if uploaded_file is not None:
             st.dataframe(most_common_df)
 
     st.text('This app is developed by: ')
-    # urlb = 'https://www.linkedin.com/in/brahmansh-dwivedi-b33a341b8//'
-    # urlaru = 'https://www.linkedin.com/in/aruneema-joshi-0456b2201/'
-    #
-    # if st.button('Brahmansh Dwivedi'):
-    #     webbrowser.open_new_tab(urlb)
-    #
-    # if st.button('Aruneema Joshi'):
-    #     webbrowser.open_new_tab(urlaru)
+    urlb = 'https://www.linkedin.com/in/brahmansh-dwivedi-b33a341b8//'
+    urlaru = 'https://www.linkedin.com/in/aruneema-joshi-0456b2201/'
+    urla = 'https://www.linkedin.com/in/aviral-srivastava-970962225/'
 
     if st.button('Brahmansh Dwivedi'):
-        jsb = "window.open('https://www.linkedin.com/in/brahmansh-dwivedi-b33a341b8/')"
-        htmlb = '<img src onerror="{}">'.format(jsb)
-        div = Div(text=htmlb)
-        st.bokeh_chart(div)
-
-
-    if st.button('Aviral Srivastav'):
-        js = "window.open('https://www.linkedin.com/in/aviral-srivastava-970962225/')"
-        html = '<img src onerror="{}">'.format(js)
-        div = Div(text=html)
-        st.bokeh_chart(div)
+        webbrowser.open_new_tab(urlb)
 
     if st.button('Aruneema Joshi'):
-        jsa = "window.open('https://www.linkedin.com/in/aruneema-joshi-0456b2201/')"
-        htmla= '<img src onerror="{}">'.format(jsa)
-        div = Div(text=htmla)
-        st.bokeh_chart(div)
+        webbrowser.open_new_tab(urlaru)
 
+    if st.button('Aviral Srivastav'):
+        webbrowser.open_new_tab(urla)
 
-
-        # emoji analysis
-        # emoji_df = helper.emoji_helper(selected_user,df)
-        # st.title("Emoji Analysis")
-        #
-        # col1,col2 = st.columns(2)
-        #
-        # with col1:
-        #     st.dataframe(emoji_df)
-        # with col2:
-        #     fig,ax = plt.subplots()
-        #     ax.pie(emoji_df[1].head(),labels=emoji_df[0].head(),autopct="%0.2f")
-        #     st.pyplot(fig)
